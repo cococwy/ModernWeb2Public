@@ -37,7 +37,7 @@ var trackSchema = new mongoose.Schema({
 		{collection: "trackDB"}
 	);
 
-mongoose.connect('mongodb://localhost/mydb');
+mongoose.connect('mongodb://eric:mLab20@ds137220.mlab.com:37220/305cde');
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
