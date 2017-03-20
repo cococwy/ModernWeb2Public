@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>1 Col Portfolio - Start Bootstrap Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <!--link href="css/1-col-portfolio.css" rel="stylesheet"-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+    body {
+        padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+
+    footer {
+        margin: 50px 0;
+    }
+
+    input[type=text] {
+        border: 2px solid lightslategray;
+        border-radius: 4px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 3px 1px; 
+        background-repeat: no-repeat;
+        padding-left: 30px;
+        width: auto;
+        margin: 12px 30px 5px 30px;
+    }
+  
+ 
+    input[type=button], input[type=submit], input[type=reset] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 5px 15px 5px 15px;
+      text-decoration: none;
+      margin: 10px 2px 2px 0px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+  
+</style>
+
+
+</head>
+
+<body ng-app="">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Search Music</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                    <li>
+                        <input type="text" id="searchText" ng-model="song">
+                    </li>
+                    <li>
+                        <input type="button" id="searchButton" value="Search">
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Search Song
+                    <small>{{ song }}</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+        <div id="songlist">
+        </div>
+      </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Pagination -->
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li>
+                        <a href="#">&laquo;</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Too Chi Tak - 305CDE Assignment 2017</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <!--script src="js/jquery.js"></script-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--script src="js/bootstrap.min.js"></script-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  
+<script>
+
+var x = {};
+var tmp = '';
+  
+var searchSong = function(term) {
+
+			$("#songlist").html("<h1>Searching, please wait...</h1>");
+	
+      $.ajax({
+            type: 'GET',
+            //url: 'https://itunes.apple.com/search?term=beyond&country=hk',
+            url: 'https://itunes.apple.com/search?term=' + term + '&entity=song',
+            data:{todo:"jsonp"},
+          dataType: "jsonp",
+          crossDomain: true,          
+          cache:false, 
+
+            success: function(data) {
+			//console.log(data.results);
+              //alert(data);
+            var tmp = "";
+            var html = [];
+				 //x = data;
+            /* parse JSON */
+			var results = data.results;
+			x = results;
+            //var dr = $.parseJSON(data.results);
+			//x = dr;
+			//console.log(dr);
+			
+			
+            /* loop through array */
+
+			/*$.each(data, function(index, d){            
+                html.push("Artist Name : ", d.artistName, ", ",
+                          "Genre : ", d.primaryGenreName, ", ", 
+                          "URL : ", d.artistLinkUrl, "<br>");
+            });*/
+			
+			/*html.push("Artist Name : ", results.artistName, "<br>",
+                          "Genre : ", results.primaryGenreName, "<br>", 
+                          "URL : ", results.artistLinkUrl, "<br>");*/
+						  
+				$.each(results, function(index, d) {
+          
+                    let artworkURL = d.artworkUrl100.replace("100x100", "200x200");
+                    tmp += '<div class="row"><div class="col-md-3"><img class="img-responsive" src="'
+                        + artworkURL + '"></div><div class="col-md-9"><h3>'
+                        + d.trackName + '</h3><h4>' + d.artistName
+                        + '</h4></div></div><hr>';
+						  //tmp = "<tr><td>" + d.artistName + ", " + d.trackName + "<img src=" + d.artworkUrl100 + "></td></tr>\n";
+						  //$("#songlist tbody:first").append(tmp);
+						  });
+						  
+				
+				
+				console.log(x);
+			
+
+               $("#songlist").html(tmp);
+              //.css("background-color", "orange");
+            },
+            error: function(xhr, status, error) {
+                console.log('Error: ' + error.message);
+            }
+        });
+      /*  $.get( "http://www.wunderground.com/weather-forecast/zmw:00000.1.59358", function( data ) {
+          alert(data);
+            $( ".result" ).html( data );
+           alert( "Load was performed." );
+           });*/
+
+ 
+};
+
+$(document).ready(function () {
+  
+searchSong("beatles")
+  
+$('#searchText').on('keypress', function(e) {
+  if (e.which === 13) {
+    //searchSong($('#searchText')[0].value);
+    checkText();
+  }
+});
+
+$('#searchButton').on('click', function() {
+  checkText();
+});
+    
+}());
+  
+function checkText() {
+  let temp = $('#searchText')[0].value;
+  if (temp) {
+    searchSong(temp);
+  }
+}
+  
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-hk">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Eric Too Chi Tak">
+
+    <title>Eric Too's 305 CDE Assignment</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+	
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+		<link type="text/css" rel="stylesheet" href="style.css" />
+	
+		<script>
+			var D = { uName: 'eric',			// Global variable
+								uPass: '123456',
+							 	uFullName: '',
+								uFav: [],
+								listing: [],
+								favTxt: ["Add to Favourites", "Remove from Favourites"],
+								favBtn: ["btn_fav", "btn_rmv"],
+							 	status: "fp"
+							};
+						
+		</script>
+    <!-- Custom CSS -->
+    <!--link href="css/1-col-portfolio.css" rel="stylesheet"-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!--body ng-app=""-->
+<body>
+
+	<div id='lean_overlay'></div>
+	
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="font-size: 20px; color: #9C6">305CDE : Music</a>
+            </div>
+					
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse bs" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#" id="FrontPage">Front Page</a>
+                    </li>
+                    <li>
+                        <a href="#" id="Top20">Top 20 Songs</a>
+                    </li>
+                    <li>
+                        <a href="#" id="Tech">Tech Notes</a>
+                    </li>
+                    <!--li>
+                        <a href="#" id="dia">Test</a>
+                    </li>
+										<li>
+												<a href="#">Factual</a>
+										</li-->
+                    <li>
+                        <input type="text" id="searchText">
+                    </li>
+                    <li>
+                        <input type="button" id="searchButton" value="Search">
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--li>
+                        <a id="modal_trigger2" href="#modal">Signup <i class="fa fa-user-o"></i></a>
+                    </li-->
+                    <li>
+                        <a id="modal_trigger" href="#modal">Login <i class="fa fa-user-circle"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+	
+		    <!-- Header -->
+    <div class="front">
+        <div class="container" id="maincontent">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive" src="musicicon.png" alt="">
+                    <div class="intro-text">
+                        <h1 class="name">305CDE Music Channel</h1>
+                        <hr class="star-light">
+                        <span class="skills">Search Music - Listen Preview - Add to Favourites</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+			</div>
+				    <!-- Portfolio Grid Section -->
+	
+
+		<section id="portfolio">
+			<div class="recommend">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Recommended Albums</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="let it be" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is3.mzstatic.com/image/thumb/Music/v4/ff/8d/33/ff8d33f4-6c44-aedd-0b6c-2796930bef80/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="the essential michael jackson" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is3.mzstatic.com/image/thumb/Music91/v4/a6/7c/e0/a67ce0ee-bdfd-e7a5-3463-2d81ce0246bc/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="native" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is5.mzstatic.com/image/thumb/Music2/v4/fe/1e/05/fe1e058a-ab64-ff26-e2e7-fdca13f728c2/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="dark passion play" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is2.mzstatic.com/image/thumb/Music/v4/1d/14/ac/1d14ac17-31ec-8702-01bc-700f592f5abc/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="elect the dead" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is2.mzstatic.com/image/thumb/Music/v4/d3/22/40/d32240de-570e-883f-cda6-44285e301474/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="black holes and revelations" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="http://is3.mzstatic.com/image/thumb/Music5/v4/ad/e3/ec/ade3ec96-5a7f-6b5d-cdfe-b00da6489ba6/source/240x240bb.jpg" class="img-responsive">
+                    </a>
+                </div>
+            </div>
+        </div>
+			</div>
+    </section>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading -->
+        <div class="row List" style="display: none;">
+            <div class="col-lg-12">
+                <h1 class="page-header">Search Song
+                    <small></small>
+                </h1>
+            </div>
+					        <div id="songlist">
+        					</div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Project One -->
+
+			
+			<div id="loadgif">
+					<img src="loading.gif">
+			</div>
+			
+			
+			
+	<div id="modal" class="popupContainer" style="display:none;">
+		
+		<header class="popupHeader">
+			<span class="header_title">Login</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</header>
+		
+		<section class="popupBody">
+
+			<!-- Username & Password Login form -->
+			<div class="user_login">
+				<form>
+					<label>Username</label>
+					<input type="text" id="loginUserName"/>
+					<br />
+
+					<label>Password</label>
+					<input type="password" id="loginPassWord"/>
+					<br />
+					
+					<label id="wrong" style="color: #F33; display:none;">Wrong Password!</label>
+
+					<!--div class="checkbox">
+						<input id="remember" type="checkbox" />
+						<label for="remember">Remember me on this computer</label>
+					</div-->
+
+					<div class="action_btns">
+						<!--div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div-->
+						<div class="one_half"><a href="#" class="btn btn_red" id="loginButton">Login</a></div>
+					</div>
+				</form>
+
+				<a href="#" class="no_ac">Sign up for free!</a>
+			</div>
+
+			<!-- Register Form -->
+			<div class="user_register" ng-app="validationApp" ng-controller="mainController">
+				<form id="regForm" name="userForm" ng-submit="submitForm()" novalidate>
+					<div class="form-group" ng-class="{ 'has-error' : userForm.username.$invalid && !userForm.username.$pristine }">
+						<label>User Name (3-8 letters)</label>
+						<input type="text" id="regUserName" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8"/>
+						<p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+            <p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+					</div>
+
+					<div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+						<label>Email Address</label>
+						<input type="email" id="regEmail" name="email" class="form-control" ng-model="user.email" required/>
+						<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+					</div>
+					
+					<div class="form-group" ng-class="{ 'has-error' : userForm.fullname.$invalid && !userForm.fullname.$pristine }">
+						<label>Full Name</label>
+						<input type="text" id="regFullName" name="name" class="form-control" ng-model="user.fullname" required/>
+						<p ng-show="userForm.fullname.$invalid && !userForm.fullname.$pristine" class="help-block">You name is required.</p>
+					</div>
+
+					<!--div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
+						<label>Password (6-8 characters)</label>
+						<input type="password" id="regPassWord" name="password" class="form-control" ng-model="user.password" ng-minlength="6" ng-maxlength="8"/>
+						<p ng-show="userForm.password.$error.minlength" class="help-block">Username is too short.</p>
+            <p ng-show="userForm.password.$error.maxlength" class="help-block">Username is too long.</p>
+					</div-->
+					
+					<div id="loadgif2" style="text-align:center; margin-bottom:10px; display:none;">
+						<img src="loading2.gif">
+					</div>
+
+					<div class="action_btns">
+						<!--div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div-->
+						<!--div class="one_half"><a href="#" class="btn btn_red" id="registerButton">Register</a></div-->
+						<div class="one_half"><button type="submit" class="btn btn-red" ng-disabled="userForm.$invalid">Register</a></div>
+					</div>
+				</form>
+				
+				<a href="#" class="have_ac" id="have_ac">Already have an account?</a>
+				
+			</div>
+			
+		</section>
+	</div>
+			
+			
+<div id="user_management" class="popupContainer" style="display:none;">
+	
+		<header class="popupHeader">
+			<span class="header_title">User Management</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</header>
+		
+		<section class="managementBody">
+				<div><a href="#" class="btn btn_red" id="myfav_btn">My Favourites</a></div>
+				<div><a href="#" class="btn btn_red" id="logout_btn">Logout</a></div>			
+		</section>
+	
+</div>
+			
+<div id="dialogueBox" class="popupContainer" style="display:none;">
+	
+		<header class="dialogueHeader">
+			<span class="header_title">Dialogue</span>
+			<span class="dialogue_close"><i class="fa fa-times"></i></span>
+		</header>
+		
+		<section class="dialogueBody">
+			<div class="dialogueText">
+					<label>Dialogue</label>
+				<div><a href="#" class="btn ok_btn">OK</a></div>
+			</div>
+		</section>
+</div>
+			
+<div class="showDetail">
+	
+		<!--div class="overlay"></div-->
+
+			<!div class="preview-large">
+				<h3 id="songname">Song Name</h3>
+				<div class="songAttr">
+					<div>
+						<img id="songImg" src=""/>
+					</div>
+						<p>
+							<label>Artist Name:</label><br><label id="artistName" style="color: #F33;"></label>
+						</p>
+						<p>
+							<label>Album Name:</label><br><label id="collectionName" style="color: #F33;"></label>
+						</p>
+				</div>
+				<textarea rows="11" disabled="true" id="lyricArea"></textarea>
+				<div class="audiodiv">
+					<audio controls>
+						<source id="songSrc" src="" type="audio/mp4">
+					Your browser does not support the audio element.
+					</audio>
+				</div>
+	
+				<!--span id="loadlyric">
+					<img src="loading2.gif">
+				</span-->
+
+				<span class="close">×</span>
+			<!/div>
+	
+</div>
+			
+      </div>
+
+        <!-- Footer -->
+        <footer>
+                <div>
+                    Copyright &copy; Too Chi Tak - 305CDE Assignment 2017
+                </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <!--script src="js/jquery.js"></script-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	
+		<!--script src="leanModal.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!--script src="js/bootstrap.min.js"></script-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	
+		<script src="functions.js"></script>
+		<script src="ready.js"></script>
+		<!--script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script-->
+
+		<script>
+
+					// create angular app
+				var validationApp = angular.module('validationApp', []);
+				// create angular controller
+				validationApp.controller('mainController', function($scope) {
+					// function to submit the form after all validation has occurred			
+					$scope.submitForm = function() {
+						// check to make sure the form is completely valid
+						if ($scope.userForm.$valid) {
+							console.log($scope.user);
+							
+							$('#modal .modal_close').unbind();
+							$('#lean_overlay').unbind();
+							$('#loadgif2').show();
+							
+								$.post('/register', $scope.user,
+								function (data, status) {
+									console.log(data);
+									if (data.Reg == "OK") {
+										$('#modal').hide();
+										//$('#regForm').children('*').each(function() {
+										//	this.value = '';
+										//});
+										$('#regUserName')[0].value = '';
+										$('#regEmail')[0].value = '';
+										$('#regFullName')[0].value = '';
+										$('#loginUserName')[0].value = $scope.user.username;
+										$('#loginPassWord')[0].value = '';
+										$('#loadgif2').hide();
+										popDiag('The password has sent to your email, please check it.');
+									}
+									else {
+										$('#loadgif2').hide();
+										popDiag('Registration error.');
+												$('#modal').hide();
+												/* $("#lean_overlay").show().click(function () {
+														close_modal(modal_id)
+												});
+												$('#modal .modal_close').click(function () {
+														close_modal(modal_id)
+												}); */
+									}
+								});
+						}
+
+					};
+
+				});
+			
+		</script>  
+
+
+</body>
+
+</html>
