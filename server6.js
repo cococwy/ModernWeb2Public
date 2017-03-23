@@ -2,8 +2,6 @@ var http = require('http');
 var fs = require("fs");
 var url = require('url');
 
-
-
 var requesturl = require("request");
 
 const util = require('util');
@@ -300,7 +298,13 @@ http.createServer(function(request, response) {
 					
 					request.on("end", function() {
 						var user = qstring.parse(formData);
-						useDB({way: 'register', data: user}, response);
+						if (user.username && user.email && user.fullname) {
+								useDB({way: 'register', data: user}, response);
+						}
+						else {
+							response.writeHead(200, {"Content-Type": "text/json"});
+							response.end(JSON.stringify({Reg:'FAIL'}));
+						}
 					});
 					
 				break;
@@ -347,7 +351,8 @@ http.createServer(function(request, response) {
 									}
 
 							} else {
-								response.end('error!');
+								response.writeHead(200, {"Content-Type": "text/json"});
+								response.end(JSON.stringify({}));
 							}
 						});
 
@@ -370,7 +375,10 @@ http.createServer(function(request, response) {
 									var udt = {favourites:arr};
 
 									User.findOneAndUpdate(qry, udt, {upsert:true}, function(errr, doct){
-											if (errr) response.end(500, { error: errr });
+											if (errr) {
+												response.writeHead(200, {"Content-Type": "text/json"});
+												response.end(JSON.stringify({Add:"FAIL"}));
+											}
 
 											else {
 
@@ -383,7 +391,8 @@ http.createServer(function(request, response) {
 								}
 
 							} else {
-								response.end('error!');
+								response.writeHead(200, {"Content-Type": "text/json"});
+								response.end(JSON.stringify({Add:"FAIL"}));
 							}
 						});
 
@@ -466,7 +475,11 @@ http.createServer(function(request, response) {
 													
 													TK.save(function(err, doc) {
 													
-														if (err) console.log('error');
+														if (err) {
+															console.log('error');
+															//response.writeHead(200, {"Content-Type": "text/json"});
+															//response.end(JSON.stringify({Add:"FAIL"}));
+														}
 														else console.log('new record');
 													});
 												}
@@ -486,7 +499,8 @@ http.createServer(function(request, response) {
 						}
 						
 					} else {
-						response.end('error!');
+								response.writeHead(200, {"Content-Type": "text/json"});
+								response.end(JSON.stringify({Add:"FAIL"}));
 					}
 				});
 
@@ -529,7 +543,8 @@ http.createServer(function(request, response) {
 						}
 						
 					} else {
-								response.end('error!');
+								response.writeHead(200, {"Content-Type": "text/json"});
+								response.end(JSON.stringify({Remove:"FAIL"}));
 							}
 				});
 
@@ -567,19 +582,17 @@ function useDB(option, response) {
 			switch(option.way) {
 
 				case "check":
+					
+					response.writeHead(200, {"Content-Type": "text/json"});
 
 					User.findOne({username:option.data.username, password:option.data.password}, function(err, doc){
 						if(err) {
 							console.log(err);
-							return response.end("server error");
+							return response.end(JSON.stringify({login:'fail'}));
 						}
 						else {
 							
 							console.log(util.inspect(doc, false, null));
-							
-							response.writeHead(200, {
-								"Content-Type": "text/json"
-							});
 							
 							if (doc) //return response.end("Name:" + doc.username + "\n" + doc.name + "\n" + doc.password + ".....");
 								return response.end(JSON.stringify(doc));

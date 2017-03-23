@@ -85,6 +85,18 @@ $('#Top20').click(function() {
 
 });
 	
+$('#Tech').click(function() {
+	D.status = 'tech';
+	$.get("/tech.html", function(data) {
+		$("#songlist").html(data);
+		
+		$('.front, #portfolio').hide();
+		$('.List').show();
+		
+		$('.page-header').html("API Endpoints");
+	});
+});
+	
 //searchSong("beatles")
   
 $('#searchText').on('keypress', function(e) {
