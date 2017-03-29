@@ -11,6 +11,12 @@ password - 123456
 
 # Credits
 
+### Hosting
+
+Website - https://www.heroku.com/
+
+MongoDB - https://mlab.com
+
 ### Website Templates
 
 https://startbootstrap.com/template-overviews/freelancer/
