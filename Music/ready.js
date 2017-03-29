@@ -1,9 +1,5 @@
 $(document).ready(function () {
-	
 
-	
-//autoLogin();
-	
   
 var searchSong = function(term) {
 	
@@ -18,33 +14,9 @@ var searchSong = function(term) {
 				console.log(data);
 				D.listing = data.results;
 				$(".page-header").html("Search Result of \"" + term + "\"");
-				
-				//if (data.resultCount > 0) refreshList();
-				//else $('#songlist').text('Nothing found.');
+
 				refreshList();
 			});
-	
-      /* $.ajax({
-            type: 'GET',
-            //url: 'https://itunes.apple.com/search?term=beyond&country=hk',
-            url: 'https://itunes.apple.com/search?term=' + term + '&entity=song',
-            data:{todo:"jsonp"},
-						dataType: "jsonp",
-						crossDomain: true,          
-						cache:false, 
-
-            success: function(data) {
-							//var results = data.results;
-							D.listing = data.results;
-							$(".page-header").html("Search Result of \"" + term + "\"");
-							refreshList();
-							
-            },
-            error: function(xhr, status, error) {
-                console.log('Error: ' + error.message);
-            }
-				
-   }); */
 				
 };
 
