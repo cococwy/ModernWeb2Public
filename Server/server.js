@@ -405,7 +405,10 @@ http.createServer(function(request, response) {
 								console.log(util.inspect(dc));
 							});
 							
-						}
+						} else {
+								response.writeHead(200, {"Content-Type": "text/json"});
+								response.end(JSON.stringify({Remove:"FAIL"}));
+							}
 						
 					} else {
 								response.writeHead(200, {"Content-Type": "text/json"});
