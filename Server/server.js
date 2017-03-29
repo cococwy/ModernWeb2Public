@@ -1,5 +1,5 @@
 const ourURL = 'http://eric-305cde.herokuapp.com/';
-const mPath = "../Client/";
+const mPath = "./Client/";
 const util = require('util');
 
 var http = require('http');
