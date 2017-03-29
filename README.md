@@ -40,7 +40,7 @@ http://gecimi.readthedocs.io/en/latest/
 
 ### User Login
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/login
+URI       https://eric-305cde.herokuapp.com/login
 Method	  POST
 Data	  {
           "username": "user1",
@@ -63,7 +63,7 @@ Error	{
 
 ### User Registration
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/register
+URI       https://eric-305cde.herokuapp.com/register
 Method	  POST
 Data	  {
           "username": "user1",
@@ -79,7 +79,7 @@ Error	{
 ```
 ### User's Favourites List
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/fav
+URI       https://eric-305cde.herokuapp.com/fav
 Method	  POST
 Data	  {
           "username": "user1",
@@ -114,7 +114,7 @@ Error	{
 ```
 ### Add to Favourites List
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/
+URI       https://eric-305cde.herokuapp.com/
 Method	  PUT
 Data	  {
           "username": "user1",
@@ -138,7 +138,7 @@ Error	{
 ```
 ### Remove from Favourites List
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/
+URI       https://eric-305cde.herokuapp.com/
 Method	  DELETE
 Data	  {
           "username": "user1",
@@ -161,7 +161,7 @@ Error	{
 ```
 ### Search a song
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/search
+URI       https://eric-305cde.herokuapp.com/search
 Method	  GET
 Data	  {
           "q": "beatles"
@@ -192,7 +192,7 @@ Error	{
 ```
 ### Retrieve Top 20 Songs from all users' list
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/top
+URI       https://eric-305cde.herokuapp.com/top
 Method	  GET
 Data	  {
 }
@@ -225,7 +225,7 @@ Error	[
 ```
 ### Search a lyric
 ```sh
-URI       http://https://eric-305cde.herokuapp.com/lyric
+URI       https://eric-305cde.herokuapp.com/lyric
 Method	  GET
 Data	  {
           "q": "beat it"
